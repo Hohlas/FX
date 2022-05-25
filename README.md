@@ -1,2 +1,2 @@
 # FX
-forex automated trading systems
+new modifycation of forex automated trading systems
