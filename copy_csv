@@ -1,3 +1,4 @@
+#!/bin/bash
 if [ ! -d $HOME/Desktop/files ]; then mkdir -p $HOME/Desktop/files; fi
 SYMBOLS=(eur usd usd2 darw) # названия папок/ярлыков
 for index in ${!SYMBOLS[*]}
