@@ -1,11 +1,13 @@
 #!/bin/bash
-if [ ! -d $HOME/Desktop/files ]; then mkdir -p $HOME/Desktop/files; fi
+export home=/home/hohla
+export ProgramFiles=$home'/.mt4/dosdevices/c:/Program\ Files'
+if [ ! -d $home/Desktop/CSV_Files ]; then mkdir -p $home/Desktop/CSV_Files; fi
 SYMBOLS=(eur usd usd2 darw) # названия папок/ярлыков
 for index in ${!SYMBOLS[*]}
 do
  SYM=${SYMBOLS[$index]}
- echo $SYM 'copy file'
-cp $HOME/Desktop/files/'#.csv' $HOME/.mt4/dosdevices/c:/Program\ Files/$SYM/MQL4/Files/
+ echo $SYM ': copy csv files'
+cp $home/Desktop/CSV_Files/'#.csv' $home/.mt4/dosdevices/c:/Program\ Files/$SYM/MQL4/Files/
 export SYM_UP="${SYM^^}" # перевод в верхний регистр (eur->EUR)
-cp $HOME/.mt4/dosdevices/c:/Program\ Files/$SYM/MQL4/Files/MatLab* $HOME/Desktop/files/MatLab$SYM_UP.csv
+cp $home/.mt4/dosdevices/c:/Program\ Files/$SYM/MQL4/Files/MatLab* $home/Desktop/CSV_Files/MatLab$SYM_UP.csv
 done
