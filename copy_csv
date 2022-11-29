@@ -8,6 +8,5 @@ do
  SYM=${SYMBOLS[$index]}
  echo $SYM ': copy csv files'
 cp $home/Desktop/CSV_Files/'#.csv' $home/.mt4/dosdevices/c:/$SYM/MQL4/Files/
-export SYM_UP="${SYM^^}" # перевод в верхний регистр (eur->EUR)
-cp $home/.mt4/dosdevices/c:/$SYM/MQL4/Files/MatLab* $home/Desktop/CSV_Files/MatLab$SYM_UP.csv
+cp $home/.mt4/dosdevices/c:/$SYM/MQL4/Files/MatLab* $home/Desktop/CSV_Files/MatLab$SYM.csv
 done
