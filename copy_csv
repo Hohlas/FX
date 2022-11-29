@@ -2,7 +2,7 @@
 export home=/home/hohla
 export MT=$home'/.mt4/dosdevices/c:/'
 if [ ! -d $home/Desktop/CSV_Files ]; then mkdir -p $home/Desktop/CSV_Files; fi
-SYMBOLS=(eur usd usd2 darw) # названия папок/ярлыков
+SYMBOLS=(EUR USD USD2 DARW) # названия папок/ярлыков
 for index in ${!SYMBOLS[*]}
 do
  SYM=${SYMBOLS[$index]}
