@@ -33,7 +33,10 @@ SYMBOLS=(USDx DARW EUR USD ROBO DEMO) # названия папок/ярлыко
 for index in ${!SYMBOLS[*]}
 do
 SYM=${SYMBOLS[$index]}
-if [ -d $MT$SYM ]; then continue fi
+if [ -d $MT$SYM ]; then 
+echo 'Hey, terminal ' $MT$SYM ' already exist'
+continue 
+fi
 # if [ ! -d $MT$SYM ]; then 
 mkdir -p $MT$SYM; echo 'create folder ' $SYM ; 
 # копирование папок с терминалом
