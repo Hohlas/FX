@@ -11,7 +11,6 @@ cd $GitFiles
 # curl $GitFx/MT_config/config/accounts.ini > ~/Desktop/tmp/accounts.ini
 echo 'copy files from GIT to GitFiles folder'
 cd $GitFiles && git clone https://github.com/Hohlas/FX.git
-# git pull origin	main # забрать изменения
 cd $GitFiles &&  git clone https://github.com/Hohlas/Fast20.git
 
 
@@ -30,14 +29,13 @@ cp -r $GitFiles/Fast20/Experts "$MT4"/MQL4/
 cp -r $GitFiles/Fast20/include "$MT4"/MQL4/
 cp -r $GitFiles/Fast20/indicators "$MT4"/MQL4/
 # copy 'MetaTrader4' dir to 'USD,EUR...' dirs
-SYMBOLS=(USDx DARW EUR USD) # названия папок/ярлыков   
+SYMBOLS=(USDx DARW EUR USD ROBO DEMO) # названия папок/ярлыков   
 for index in ${!SYMBOLS[*]}
 do
 SYM=${SYMBOLS[$index]}
-
-if [ ! -d $MT$SYM ]; then 
+if [ -d $MT$SYM ]; then continue fi
+# if [ ! -d $MT$SYM ]; then 
 mkdir -p $MT$SYM; echo 'create folder ' $SYM ; 
-fi
 # копирование папок с терминалом
 echo 'copy files to folder ' $SYM ;
 cp -r $HOME/.mt4/dosdevices/c:/Program\ Files/MetaTrader\ 4/* $MT$SYM
