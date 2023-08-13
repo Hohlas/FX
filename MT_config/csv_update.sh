@@ -6,7 +6,7 @@ cd $GitFiles/FX && echo 'Download csv files from GitHub to .mt4/GitFiles/FX'
 git pull origin main --no-commit # забрать изменения
 cd $GitFiles/Fast20 && echo 'Download experts files from GitHub to .mt4/GitFiles/Fast20'
 git pull origin main --no-commit # забрать изменения
-
+echo 'copy MatLab.csv files to .mt4/GitFiles/FX and update #.csv and experts files for all terminals'
 TERMINAL_LIST=($SYMBOLS) # названия папок/ярлыков   
 for index in ${!TERMINAL_LIST[*]}
 do
