@@ -1,6 +1,6 @@
 #!/bin/bash
-
 cd && rm -r Music Videos Pictures Public 
+echo "export SYMBOLS='"$SYMBOLS"'" >> $HOME/.bashrc
 echo 'export MT4=$HOME/.mt4/dosdevices/c:/Program\ Files/MetaTrader\ 4' >> $HOME/.bashrc
 echo 'export MT=$HOME/.mt4/dosdevices/c:/' >> $HOME/.bashrc
 echo 'export GitFiles=$HOME/.mt4/GitFiles' >> $HOME/.bashrc
@@ -13,12 +13,10 @@ echo 'copy files from GIT to GitFiles folder'
 cd $GitFiles && git clone https://github.com/Hohlas/FX.git
 cd $GitFiles &&  git clone https://github.com/Hohlas/Fast20.git
 
-
-# copy 'config' to MetaTrader4 dir
 rm -r "$MT4"/config/*
 rm -r "$MT4"/profiles/*
-cp -r $GitFiles/FX/MT_config/config/* "$MT4"/config/ 
-cp -r $GitFiles/FX/MT_config/profiles/* "$MT4"/profiles/ 
+cp -r $GitFiles/FX/MT_config/config/* "$MT4"/config/ && echo 'copy config files to '$MT4
+cp -r $GitFiles/FX/MT_config/profiles/* "$MT4"/profiles/ && echo 'copy profiles files to '$MT4
 # copy expetrs to MetaTrader4 dir
 rm -r "$MT4"/MQL4/Experts
 rm -r "$MT4"/MQL4/Include
@@ -29,10 +27,10 @@ cp -r $GitFiles/Fast20/Experts "$MT4"/MQL4/
 cp -r $GitFiles/Fast20/include "$MT4"/MQL4/
 cp -r $GitFiles/Fast20/indicators "$MT4"/MQL4/
 # copy 'MetaTrader4' dir to 'USD,EUR...' dirs
-SYMBOLS=(USDx DARW EUR USD ROBO DEMO) # названия папок/ярлыков   
-for index in ${!SYMBOLS[*]}
+TERMINAL_LIST=($SYMBOLS) # названия папок/ярлыков   
+for index in ${!TERMINAL_LIST[*]}
 do
-SYM=${SYMBOLS[$index]}
+SYM=${TERMINAL_LIST[$index]}
 if [ -d $MT$SYM ]; then 
 echo 'Hey, terminal ' $MT$SYM ' already exist'
 continue 
