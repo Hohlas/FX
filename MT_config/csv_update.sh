@@ -16,7 +16,7 @@ SYM=${TERMINAL_LIST[$index]}
 cp $MT$SYM/MQL4/Files/MatLab* $GitFiles/FX/MatLab$SYM".csv"
 cp $GitFiles/FX/'#.csv' $MT$SYM/MQL4/Files
 cp -r $GitFiles/Fast20 $MT$SYM/MQL4 
-echo 'Download MatLab'$SYM'.csv to .mt4/GitFiles/FX, and upload #.csv, experts to ..'$SYM'/MQL4/Experts'
+echo 'Download MatLab'$SYM'.csv to .mt4/GitFiles/FX, and upload #.csv, experts to drive_c/'$SYM'/MQL4'
 done
 cd $GitFiles/FX
 #git add MatLabUSD.csv
