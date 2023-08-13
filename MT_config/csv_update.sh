@@ -13,9 +13,10 @@ for index in ${!TERMINAL_LIST[*]}
 do
 SYM=${TERMINAL_LIST[$index]}
 # копирование настроек
-cp $MT$SYM/MQL4/Files/MatLab* $GitFiles/FX/MatLab$SYM".csv" && echo 'Download MatLab'$SYM'.csv to .mt4/GitFiles/FX'
-cp $GitFiles/FX/'#.csv' $MT$SYM/MQL4/Files && echo 'Download #.csv from .mt4/GitFiles to ..'$SYM'/MQL4/Files'
-cp -r $GitFiles/Fast20 $MT$SYM/MQL4 && echo 'Download experts files from .mt4/GitFiles to ..'$SYM'/MQL4/Experts'
+cp $MT$SYM/MQL4/Files/MatLab* $GitFiles/FX/MatLab$SYM".csv"
+cp $GitFiles/FX/'#.csv' $MT$SYM/MQL4/Files
+cp -r $GitFiles/Fast20 $MT$SYM/MQL4 
+echo 'Download MatLab'$SYM'.csv to .mt4/GitFiles/FX, and upload #.csv, experts to ..'$SYM'/MQL4/Experts'
 done
 cd $GitFiles/FX
 #git add MatLabUSD.csv
