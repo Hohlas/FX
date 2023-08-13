@@ -1,7 +1,7 @@
 #!/bin/bash   
 # script to copy MatLab.csv files to .mt4/GitFiles/FX
 # and update #.csv and experts files for all terminals
-SYMBOLS='USDx DARW EUR USD ROBO DEMO'
+
 source $HOME/.bashrc
 cd $GitFiles/FX && echo 'Download csv files from GitHub to .mt4/GitFiles/FX'
 git pull origin main --no-commit # забрать изменения
