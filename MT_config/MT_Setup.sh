@@ -3,9 +3,7 @@ SYMBOLS='USDx DARW EUR USD ROBO DEMO'
 echo "export SYMBOLS='"$SYMBOLS"'" >> $HOME/.bashrc
 echo 'export MT4="$HOME/.mt4/drive_c/Program Files (x86)/MetaTrader 4"' >> $HOME/.bashrc
 echo 'export MT=$HOME/.mt4/drive_c/' >> $HOME/.bashrc
-#echo 'export GitFiles=$HOME/GitFiles' >> $HOME/.bashrc
-#echo 'export GitFolder=$HOME/GitFiles/Fast20/.git/' >> $HOME/.bashrc
-#echo 'export GitFx=https://raw.githubusercontent.com/Hohlas/FX/raw/main' >> $HOME/.bashrc 
+echo 'alias fx_clone=~/FX/MT_config/csv_update.sh' >> $HOME/.bashrc
 
 if [ ! -d ~/Fast20 ]; then git clone https://github.com/Hohlas/Fast20.git ~/Fast20
 else 
