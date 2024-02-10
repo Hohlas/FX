@@ -27,5 +27,5 @@ rm -r "$MT4"/MQL4/Indicators
 rm -r "$MT4"/MQL4/include
 rm -r "$MT4"/MQL4/indicators
 cp -r ~/Fast20/Experts "$MT4"/MQL4/
-cp -r ~/Fast20/include "$MT4"/MQL4/
-cp -r ~/Fast20/indicators "$MT4"/MQL4/
+cp -r ~/Fast20/Include "$MT4"/MQL4/
+cp -r ~/Fast20/Indicators "$MT4"/MQL4/
