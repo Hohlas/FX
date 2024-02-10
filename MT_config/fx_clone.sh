@@ -1,15 +1,12 @@
 if [ ! -d ~/Fast20 ]; then git clone https://github.com/Hohlas/Fast20.git ~/Fast20
 else 
-cd ~/Fast20; 
-git fetch origin; # get last updates from git
-git reset --hard origin/main # сбросить локальную ветку до последнего коммита из git
+cd ~/Fast20; git fetch origin; git reset --hard origin/main 
 fi 
 
-cd ~/FX && echo 'Download csv files from GitHub to ~/FX'
-git fetch origin; git reset --hard origin/main
-cd ~/Fast20 && echo 'Download experts files from GitHub to ~/Fast20'
-git fetch origin; git reset --hard origin/main
-echo 'copy MatLab.csv files to ~/FX and update #.csv and experts files for all terminals'
+echo 'update from GitHub ~/FX and ~/Fast20'
+cd ~/FX; git fetch origin; git reset --hard origin/main
+cd ~/Fast20; git fetch origin; git reset --hard origin/main
+
 TERMINAL_LIST=($SYMBOLS) # названия папок/ярлыков   
 for index in ${!TERMINAL_LIST[*]}
 do
