@@ -1,8 +1,3 @@
-if [ ! -d ~/Fast20 ]; then git clone https://github.com/Hohlas/Fast20.git ~/Fast20
-else 
-cd ~/Fast20; git fetch origin; git reset --hard origin/main 
-fi 
-
 echo 'update from GitHub ~/FX and ~/Fast20'
 cd ~/FX; git fetch origin; git reset --hard origin/main
 cd ~/Fast20; git fetch origin; git reset --hard origin/main
