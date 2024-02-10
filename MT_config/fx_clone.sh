@@ -1,6 +1,8 @@
 echo 'update from GitHub ~/FX and ~/Fast20'
-cd ~/FX; git fetch origin; git reset --hard origin/main
 cd ~/Fast20; git fetch origin; git reset --hard origin/main
+cd ~/FX; git fetch origin; git reset --hard origin/main
+chmod +x ~/FX/MT_config/*.sh
+
 
 TERMINAL_LIST=($SYMBOLS) # названия папок/ярлыков   
 for index in ${!TERMINAL_LIST[*]}
