@@ -1,5 +1,5 @@
 #!/bin/bash
-SYMBOLS='USDx DARW EUR USD ROBO DEMO'
+SYMBOLS='USDx DARW EUR USD ROBO INSTA DEMO'
 
 echo "export SYMBOLS='"$SYMBOLS"'" >> $HOME/.bashrc
 echo 'export MT4="$HOME/.mt4/drive_c/Program Files (x86)/MetaTrader 4"' >> $HOME/.bashrc
